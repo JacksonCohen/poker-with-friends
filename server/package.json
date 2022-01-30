@@ -1,0 +1,31 @@
+{
+  "name": "poker-with-friends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacksonCohen/poker-with-friends.git"
+  },
+  "author": "JRC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacksonCohen/poker-with-friends/issues"
+  },
+  "homepage": "https://github.com/JacksonCohen/poker-with-friends#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.13",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
