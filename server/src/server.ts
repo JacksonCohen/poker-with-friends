@@ -1,16 +1,18 @@
 import app from './app';
-import * as http from 'http';
-import socketServer from './socket';
+import { createServer } from 'http';
 import 'reflect-metadata';
+import socketServer from './socket';
 
 const port = normalizePort(process.env.PORT || '9000');
 app.set('port', port);
 
-const server = http.createServer(app);
+const server = createServer(app);
 
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+socketServer(server);
 
 function normalizePort(val) {
   const port = parseInt(val, 10);

@@ -1,13 +1,13 @@
 import express, { Application } from 'express';
 import createError from 'http-errors';
-import socketServer from './socket';
-import socket from './socket';
+import cors from 'cors';
 import 'reflect-metadata';
 
 const app: Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -22,7 +22,10 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({
+    message: err.message,
+    error: err,
+  });
 });
 
 export default app;
