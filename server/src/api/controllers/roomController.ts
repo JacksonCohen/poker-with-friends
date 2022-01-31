@@ -27,6 +27,10 @@ export class RoomController {
     } else {
       await socket.join(input.roomId);
       socket.emit('room_joined');
+
+      if (connectedSockets && connectedSockets.size > 1) {
+        socket.emit('start_game');
+      }
     }
   }
 }

@@ -8,6 +8,10 @@ class GameService {
       socket.on('room_joined_error', ({ error }) => reject(error));
     });
   }
+
+  public async onStartGame(socket: Socket, listener: () => void) {
+    socket.on('start_game', listener);
+  }
 }
 
 export default new GameService();
